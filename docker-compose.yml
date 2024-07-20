@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  auction-app-db:
+    image: postgres
+    restart: always
+    container_name: auction-app-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: keshav101
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+      
+volumes:
+  postgres:
